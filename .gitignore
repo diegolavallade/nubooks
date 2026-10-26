@@ -1,0 +1,52 @@
+# Dependencias y artefactos generados por el build; se reproducen localmente.
+node_modules/
+dist/
+build/
+.cache/
+.env*
+!.env.example
+!.env.*.example
+.vite/
+vite.config.*.timestamp-*
+*.tsbuildinfo
+*-debug.log*
+logs/
+*.log
+.claude-replay.*
+.tmp-*
+/.figma/design-context/
+
+# Platform-managed agentplat state, not project source. In the
+# client-initiated single-repo workspace layout (make's `Path: "."` spec) the
+# repo root IS the workspace root, so these land inside this repo rather than
+# beside it.
+/.plugins/
+/.opencode-skills/
+
+# Rust / Tauri: compilaciones y esquemas generados.
+/src-tauri/target/
+/src-tauri/gen/schemas/
+
+# Biblioteca personal y datos locales (no forman parte del código fuente).
+/ebooks/
+*.epub
+*.db
+*.sqlite
+*.sqlite3
+
+# Credenciales y claves de firma.
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Estado local de herramientas y del sistema operativo.
+/.codex/
+/.agents/
+/.idea/
+/.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo

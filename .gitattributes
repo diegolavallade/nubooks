@@ -1,0 +1,17 @@
+# Normaliza los archivos de texto entre Windows, macOS y Linux.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Recursos pequeños versionados directamente, sin requerir Git LFS.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.icns binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary

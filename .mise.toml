@@ -1,0 +1,5 @@
+# Versiones reproducibles del runtime y del gestor de paquetes del proyecto.
+# Figma Make y el desarrollo local pueden leer este archivo antes de instalar.
+[tools]
+node = "22"
+"npm:pnpm" = "10.34.3"

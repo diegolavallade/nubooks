@@ -1,0 +1,33 @@
+# Manifiesto del backend Tauri. El frontend se declara y construye por separado
+# en `package.json`; este crate produce las variantes de biblioteca requeridas
+# por los destinos de escritorio y móvil de Tauri.
+[package]
+name = "nubooks"
+version = "0.1.1"
+license = "MIT"
+description = "Nubooks desktop reader"
+authors = ["Nubooks"]
+edition = "2021"
+
+# La lógica vive en una biblioteca para que `main.rs` sea solo un punto de entrada.
+[lib]
+name = "nubooks_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+# Genera el contexto y metadatos que Tauri incorpora durante la compilación.
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+# Runtime, serialización, codificación, IDs y marcas de tiempo del almacenamiento.
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+base64 = "0.22"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["clock"] }
+
+# Evita procesos simultáneos que competirían por el índice en escritorio.
+[target.'cfg(any(target_os = "windows", target_os = "macos", target_os = "linux"))'.dependencies]
+tauri-plugin-single-instance = "2"

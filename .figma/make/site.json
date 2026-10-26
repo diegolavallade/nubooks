@@ -1,0 +1,10 @@
+{
+  "description": "Lee y organiza ebooks en una interfaz minimalista inspirada en Apple Books, diseñada para disfrutar de una lectura cómoda y sin distracciones.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
